@@ -1,0 +1,19 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Learning node express and mongoDB",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Healy",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Healy218/Express-MongoDB-practice.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Healy218/Express-MongoDB-practice/issues"
+  },
+  "homepage": "https://github.com/Healy218/Express-MongoDB-practice#readme"
+}
