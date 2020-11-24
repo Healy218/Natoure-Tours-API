@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Healy218/Express-MongoDB-practice/issues"
   },
-  "homepage": "https://github.com/Healy218/Express-MongoDB-practice#readme"
+  "homepage": "https://github.com/Healy218/Express-MongoDB-practice#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
