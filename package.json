@@ -4,7 +4,7 @@
   "description": "Learning node express and mongoDB",
   "main": "app.js",
   "scripts": {
-    "start:dev": "nodemon server.js",
+    "start": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js"
   },
   "author": "Matthew Healy",
@@ -28,6 +28,7 @@
     "eslint-plugin-prettier": "^3.2.0",
     "eslint-plugin-react": "^7.21.5",
     "express": "^4.17.1",
+    "mongoose": "^5.11.4",
     "morgan": "^1.10.0",
     "prettier": "^2.2.1"
   }
