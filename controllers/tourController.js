@@ -1,15 +1,5 @@
 const Tour = require('../models/tourModel');
 
-exports.checkBody = (req, res, next) => {
-  if (!req.body.name || !req.body.price) {
-    return res.status(404).json({
-      status: 'fail',
-      message: 'No name or price was set',
-    });
-  }
-  next();
-};
-
 exports.getAllTours = (req, res) => {
   res.status(200).json({
     status: 'success',
@@ -22,11 +12,8 @@ exports.getAllTours = (req, res) => {
 };
 
 exports.getTour = (req, res) => {
-  console.log(req.params);
-  const id = req.params.id * 1;
-
+  //console.log(req.params);
   // const tour = tours.find((el) => el.id === id);
-
   // res.status(200).json({
   //   status: 'success',
   //   data: {
@@ -36,9 +23,11 @@ exports.getTour = (req, res) => {
 };
 
 exports.createTour = async (req, res) => {
+  console.log(req.body);
+
   try {
     const newTour = await Tour.create(req.body);
-
+    console.log(newTour);
     res.status(201).json({
       status: 'success',
       data: {
@@ -46,6 +35,7 @@ exports.createTour = async (req, res) => {
       },
     });
   } catch (err) {
+    console.log(err);
     res.status(400).json({
       status: 'fail',
       message: err,
