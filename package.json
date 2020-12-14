@@ -31,5 +31,8 @@
     "mongoose": "^5.11.4",
     "morgan": "^1.10.0",
     "prettier": "^2.2.1"
+  },
+  "engines": {
+    "node": ">10.0"
   }
 }
