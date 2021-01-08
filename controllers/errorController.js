@@ -19,6 +19,12 @@ const handleValidationErrorDB = (err) => {
   return new AppError(message, 404);
 };
 
+const handleJWTerror = (err) =>
+  new AppError('invalid token please log in again', 401);
+
+const handleJWTExpireError = (err) =>
+  new AppError('Your session has timed out', 401);
+
 const sendErrorDev = (err, res) => {
   res.status(err.statusCode).json({
     status: err.status,
@@ -61,6 +67,9 @@ module.exports = (err, req, res, next) => {
     if (error.code === 11000) error = handleDuplicateFieldsDB(error);
     if (error.name === 'ValidationError')
       error = handleValidationErrorDB(error);
+    if (error.name === 'JsonWebTokenError') error = handleJWTerror(error);
+    if (error.name === 'TokenExpiredError') error = handleJWTExpireError(error);
+
     sendErrorProd(error, res);
   }
 };
