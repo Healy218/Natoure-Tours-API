@@ -77,5 +77,7 @@ exports.protect = catchAsync(async (req, res, next) => {
     return next(new AppError('Password has been changed, log in again!', 401));
   }
 
+  //Grant accesss to protected route
+  req.user = freshUser;
   next();
 });
